@@ -1,0 +1,22 @@
+@font-face {
+
+    font-family: mytext;
+    src: url(./Grandstander-VariableFont_wght.ttf);
+}
+
+h1 {
+    font-size: 5em;
+}
+
+h2 {
+        font-size: 3em;
+}
+body { font-family: mytext;
+    font-size: 1em;
+    width: 100vw;
+    height:100vh;
+    margin: auto;
+    text-align: center;
+
+}
+
