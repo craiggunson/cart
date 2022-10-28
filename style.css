@@ -8,7 +8,7 @@
 @font-face {
 
     font-family: standard;
-    src: url(./Neonderthaw-Regular.ttf);
+    src: url(./TextMe.ttf);
     font-weight: 402;
 
 }
@@ -18,7 +18,6 @@ h2 {
     font-family: mytext;
     font-weight: 401;
 
-    transform: rotate(-1deg);
     color: #fcd9ff;
     text-shadow: 0 0 0 transparent, 0 0 10px #c800ff,
       0 0 20px rgba(247, 0, 255, 0.5), 0 0 40px #c800ff, 0 0 100px #c800ff,
@@ -45,7 +44,6 @@ body { font-family: standard;
     margin: auto;
     text-align: center;
 
-    transform: rotate(1deg);
     color: #c7f6ba;
     text-shadow: 0 0 0 transparent, 0 0 10px #34ff26,
       0 0 20px rgba(49, 132, 18, 0.5), 0 0 40px #34ff26, 0 0 100px #34ff26,
