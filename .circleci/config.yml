@@ -6,7 +6,6 @@ orbs:
 
 jobs:
   avocado:
-    context: myContext
 
     #machine:
     #  image: ubuntu-2204:2022.07.1
@@ -30,7 +29,6 @@ jobs:
 
 
   production:
-    context: myContext
 
     docker:
       - image: cimg/node:18.7.0
@@ -46,7 +44,11 @@ workflows:
   avocado-workflow:
     jobs:
       - avocado
+          context: myContext
+
       - production:
+          context: myContext
+
           requires:
             - avocado
           filters:
