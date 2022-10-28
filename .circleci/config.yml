@@ -15,7 +15,7 @@ jobs:
     steps:
       - checkout
       - gcp-cli/initialize:
-          gcloud-service-key: cartkey
+          gcloud-service-key: GCLOUD_SERVICE_KEY
           google-compute-region: AUSTRALIA_REGION
           google-project-id: GOOGLE_PROJECT_ID
 
