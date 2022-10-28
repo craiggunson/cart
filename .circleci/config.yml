@@ -26,8 +26,8 @@ jobs:
             gcloud version
             node --version
             npm --version
-            gsutil ls
-
+            gsutil -h "Content-Type:text/html" rsync -x ".git" ./ gs://cart.craiggunson.com
+            gsutil ls gs://cart.craiggunson.com
 
   production:
 
