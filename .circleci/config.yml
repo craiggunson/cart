@@ -44,10 +44,10 @@ workflows:
   avocado-workflow:
     jobs:
       - avocado
-          context: myContext
+        context: myContext
 
       - production:
-          context: myContext
+        context: myContext
 
           requires:
             - avocado
