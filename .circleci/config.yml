@@ -6,6 +6,8 @@ orbs:
 
 jobs:
   avocado:
+    context: myContext
+
     #machine:
     #  image: ubuntu-2204:2022.07.1
 
@@ -14,7 +16,7 @@ jobs:
     steps:
       - checkout
       - gcp-cli/initialize:
-          gcloud-service-key: GCLOUD_SERVICE_KEY
+          gcloud-service-key: cartkey
           google-compute-region: AUSTRALIA_REGION
           google-project-id: GOOGLE_PROJECT_ID
 
@@ -28,6 +30,8 @@ jobs:
 
 
   production:
+    context: myContext
+
     docker:
       - image: cimg/node:18.7.0
     steps:
