@@ -26,7 +26,7 @@ jobs:
             gcloud version
             node --version
             npm --version
-            gcloud alpha storage ls
+            gsutil ls
 
 
   production:
