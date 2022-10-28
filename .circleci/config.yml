@@ -1,0 +1,59 @@
+
+version: 2.1
+
+orbs: 
+  gcp-cli: circleci/gcp-cli@2.4.1
+
+jobs:
+  avocado:
+
+    #machine:
+    #  image: ubuntu-2204:2022.07.1
+
+    docker:
+      - image: cimg/node:18.7.0
+    steps:
+      - checkout
+      - gcp-cli/install   #already in machine image
+      - gcp-cli/initialize:
+          gcloud-service-key: GCLOUD_SERVICE_KEY
+          google-compute-region: AUSTRALIA_REGION
+          google-project-id: GOOGLE_PROJECT_ID
+
+      - run:
+          name: gcloud
+          command: |
+            gcloud version
+            node --version
+            npm --version
+            gsutil ls
+
+
+  production:
+
+    docker:
+      - image: cimg/node:18.7.0
+    steps:
+      - checkout
+
+      - run:
+          name: production deploy
+          command: |
+            echo production
+
+workflows:
+  avocado-workflow:
+    jobs:
+      - avocado:
+          context: myContext
+
+      - production:
+          context: myContext
+
+          requires:
+            - avocado
+          filters:
+            branches:
+              only:
+                - master      
+
