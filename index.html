@@ -18,13 +18,21 @@
           </head>
 
           <body>
-            <script src="checkout.js"></script>
 
-            <h1>Cart</h1>
-           <p>What fruit do you like?</p>
-           <h2>🍍🍐🫐🍇</h2>
-           { "Sample", "1" }
+           <h3>What fruit do you like?</h3>
+           <custom id="pineapple" onclick="add(cart,pineapple)" >🍍</custom>  
+           <custom id="pear" onclick="add(cart,pear)" >🍐</custom>  
+           <custom id="blueberry" onclick="add(cart,blueberry)" >🫐</custom>  
+           <custom id="grape" onclick="add(cart,grape)" >🍇</custom>  
+           <custom id="checkout" onclick="checkout(cart)" >🛒</custom>  
+
+           
+           
+           <p id="demo">{ "Sample", "1" }</p>
+           
           </body>
+          <script src="checkout.js"></script>
+
         </html>
         
 

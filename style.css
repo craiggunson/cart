@@ -13,17 +13,20 @@
 
 }
 
-h2 {
+custom {
+  user-select: none; /* standard */
+  -moz-user-select: none; /* firefox specific */
+  -webkit-user-select: none; /* Chrome, Opera and Safari*/
     font-size: 3em;
     font-family: mytext;
     font-weight: 401;
-
+    cursor: pointer;
     color: #fcd9ff;
     text-shadow: 0 0 0 transparent, 0 0 10px #c800ff,
       0 0 20px rgba(247, 0, 255, 0.5), 0 0 40px #c800ff, 0 0 100px #c800ff,
       0 0 200px #c800ff, 0 0 300px #c800ff, 0 0 500px #c800ff, 0 0 1000px #c800ff;
-    -webkit-animation: blink 4s infinite alternate;
-    animation: blink 4s infinite alternate;
+    /*-webkit-animation: blink 4s infinite alternate;
+    animation: blink 4s infinite alternate;*/
   }
 
 
@@ -35,6 +38,7 @@ h1 {
 }
 
 
+p { font-size: .5em;}
 
 body { font-family: standard;
     font-weight: 402;
@@ -48,8 +52,8 @@ body { font-family: standard;
     text-shadow: 0 0 0 transparent, 0 0 10px #34ff26,
       0 0 20px rgba(49, 132, 18, 0.5), 0 0 40px #34ff26, 0 0 100px #34ff26,
       0 0 200px #34ff26, 0 0 300px #34ff26, 0 0 500px #34ff26;
-    -webkit-animation: buzz 0.01s infinite alternate;
-    animation: buzz 0.01s infinite alternate;
+    /*-webkit-animation: buzz 0.5s infinite alternate;
+    animation: buzz 0.5s infinite alternate;*/
 
     background-color: rgb(31, 47, 33);
 
