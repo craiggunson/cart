@@ -64,8 +64,18 @@ return cart
 function checkout(cart) {
   console.log('begin_checkout',cart);
   gtag("event", "begin_checkout", cart);
+  pay(cart);
 return cart 
 }  
+
+function pay(cart) {
+cart['transaction_id'] = Math.floor(100000 + Math.random() * 900000);
+cart['shipping'] = 5
+cart['tax'] = cart['value'] * 1.1
+gtag("event", "purchase", cart)
+
+redraw(cart)
+}
 
 function redraw(cart) {
   sumcart=cart['items']
@@ -74,7 +84,7 @@ function redraw(cart) {
     cart.value = cart.value + cart.items[i].price;
     cart.value = Math.round(cart.value *100 ) / 100;
   }
-document.getElementById("demo").innerHTML = JSON.stringify(cart,null,2).replace(/\n( *)/g, function (match, p1) {
+document.getElementById("demo").innerHTML = JSON.stringify(cart,null,1).replace(/\n( *)/g, function (match, p1) {
   return '<br>' + '&nbsp;'.repeat(p1.length); });
  }
 
