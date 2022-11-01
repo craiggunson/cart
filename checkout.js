@@ -1,6 +1,6 @@
 cart = {
   currency: "AUD",
-  value: 7.77,
+  value: Number('0.00'),
   items: []
 }
 
@@ -9,7 +9,7 @@ pineapple = {
   item_name: "Pineapple",
   affiliation: "craiggunson.com",
   item_brand: "Sunny Pineapples",
-  price: 4.99,
+  price: Number('4.95'),
   quantity: 1
 }
 
@@ -18,7 +18,7 @@ pear = {
   item_name: "Pear",
   affiliation: "craiggunson.com",
   item_brand: "Crispy Green Pears",
-  price: 3.99,
+  price: Number('3.95'),
   quantity: 1
 }
 
@@ -27,7 +27,7 @@ blueberry = {
   item_name: "Blueberry",
   affiliation: "craiggunson.com",
   item_brand: "Berry Farm",
-  price: 3.99,
+  price: Number('4.95'),
   quantity: 1
 }
 
@@ -36,7 +36,7 @@ grape = {
   item_name: "Grapes",
   affiliation: "craiggunson.com",
   item_brand: "Berry Farm",
-  price: 3.99,
+  price: Number('2.95'),
   quantity: 1
 }
 
@@ -68,6 +68,12 @@ return cart
 }  
 
 function redraw(cart) {
+  sumcart=cart['items']
+  var arrayLength = sumcart.length;
+  for (var i = 0; i < arrayLength; i++) {  //add up the total cart value
+    cart.value = cart.value + cart.items[i].price;
+    cart.value = Math.round(cart.value *100 ) / 100;
+  }
 document.getElementById("demo").innerHTML = JSON.stringify(cart,null,2).replace(/\n( *)/g, function (match, p1) {
   return '<br>' + '&nbsp;'.repeat(p1.length); });
  }

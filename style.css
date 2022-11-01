@@ -25,8 +25,7 @@ custom {
     text-shadow: 0 0 0 transparent, 0 0 10px #c800ff,
       0 0 20px rgba(247, 0, 255, 0.5), 0 0 40px #c800ff, 0 0 100px #c800ff,
       0 0 200px #c800ff, 0 0 300px #c800ff, 0 0 500px #c800ff, 0 0 1000px #c800ff;
-    /*-webkit-animation: blink 4s infinite alternate;
-    animation: blink 4s infinite alternate;*/
+
   }
 
 
@@ -38,54 +37,25 @@ h1 {
 }
 
 
-p { font-size: .5em;}
+p { font-size: 1em;
+
+  color: #c7f6ba;
+  text-shadow: 0 0 0 transparent, 0 0 10px #34ff26,
+    0 0 20px rgba(49, 132, 18, 0.5), 0 0 40px #34ff26, 0 0 100px #34ff26,
+    0 0 200px #34ff26, 0 0 300px #34ff26, 0 0 500px #34ff26;
+
+}
+
 
 body { font-family: standard;
-    font-weight: 402;
     font-size: 2em;
     width: 100vw;
     height:100vh;
     margin: auto;
     text-align: center;
 
-    color: #c7f6ba;
-    text-shadow: 0 0 0 transparent, 0 0 10px #34ff26,
-      0 0 20px rgba(49, 132, 18, 0.5), 0 0 40px #34ff26, 0 0 100px #34ff26,
-      0 0 200px #34ff26, 0 0 300px #34ff26, 0 0 500px #34ff26;
-    /*-webkit-animation: buzz 0.5s infinite alternate;
-    animation: buzz 0.5s infinite alternate;*/
 
     background-color: rgb(31, 47, 33);
 
 }
 
-
-@-webkit-keyframes buzz {
-    70% {
-      opacity: 0.8;
-    }
-  }
-
-
-  @-webkit-keyframes blink {
-    40% {
-      opacity: 1;
-    }
-  
-    42% {
-      opacity: 0.8;
-    }
-  
-    43% {
-      opacity: 1;
-    }
-  
-    45% {
-      opacity: 0.2;
-    }
-  
-    46% {
-      opacity: 1;
-    }
-  }
-  
