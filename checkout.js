@@ -72,9 +72,12 @@ function pay(cart) {
 cart['transaction_id'] = Math.floor(100000 + Math.random() * 900000);
 cart['shipping'] = 5
 cart['tax'] = cart['value'] * 1.1
+cart.tax = Math.round(cart.tax *100 ) / 100;
+
 gtag("event", "purchase", cart)
 
-redraw(cart)
+document.getElementById("demo").innerHTML = JSON.stringify(cart,null,1).replace(/\n( *)/g, function (match, p1) {
+  return '<br>' + '&nbsp;'.repeat(p1.length); });
 }
 
 function redraw(cart) {
@@ -83,6 +86,7 @@ function redraw(cart) {
   for (var i = 0; i < arrayLength; i++) {  //add up the total cart value
     cart.value = cart.value + cart.items[i].price;
     cart.value = Math.round(cart.value *100 ) / 100;
+    
   }
 document.getElementById("demo").innerHTML = JSON.stringify(cart,null,1).replace(/\n( *)/g, function (match, p1) {
   return '<br>' + '&nbsp;'.repeat(p1.length); });
