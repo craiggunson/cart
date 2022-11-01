@@ -71,7 +71,7 @@ return cart
 function pay(cart) {
 cart['transaction_id'] = Math.floor(100000 + Math.random() * 900000);
 cart['shipping'] = 5
-cart['tax'] = cart['value'] * 1.1
+cart['tax'] = cart['value'] / 10
 cart.tax = Math.round(cart.tax *100 ) / 100;
 
 gtag("event", "purchase", cart)
