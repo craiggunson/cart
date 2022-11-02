@@ -54,12 +54,10 @@ workflows:
       - hold: 
           type: approval
 
-      - production:
+      - production-check:
           context: myContext
-
           requires:
             - hold
-            - avocado
           filters:
             branches:
               only:
