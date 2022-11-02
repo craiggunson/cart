@@ -50,12 +50,15 @@ workflows:
     jobs:
       - avocado:
           context: myContext
+  
+      - hold: 
+          type: approval
 
       - production:
           context: myContext
-          type: approval
 
           requires:
+            - hold
             - avocado
           filters:
             branches:
