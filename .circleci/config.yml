@@ -54,7 +54,7 @@ workflows:
       - hold: 
           type: approval
 
-      - production-check:
+      - production:
           context: myContext
           requires:
             - hold
