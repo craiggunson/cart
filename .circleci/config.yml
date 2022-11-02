@@ -53,6 +53,7 @@ workflows:
 
       - production:
           context: myContext
+          type: approval
 
           requires:
             - avocado
