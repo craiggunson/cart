@@ -51,8 +51,8 @@ workflows:
       - avocado:
           context: myContext
   
-      - hold: 
-          type: approval
+      #- hold: 
+      #    type: approval
 
       - production:
           context: myContext
