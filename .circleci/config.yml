@@ -57,7 +57,8 @@ workflows:
       - production:
           context: myContext
           requires:
-            - hold
+            #- hold
+            - avocado
           filters:
             branches:
               only:
