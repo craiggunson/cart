@@ -15,7 +15,7 @@ commands:
   thatone:
     steps:
       - run:
-          name: thas
+          name: that
           command: |
             echo that
       - thisone
