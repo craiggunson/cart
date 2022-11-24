@@ -29,6 +29,7 @@ jobs:
     docker:
       - image: cimg/node:18.7.0
     steps:
+      - thatone
       - checkout
       - gcp-cli/install   #already in machine image
       - gcp-cli/initialize:
