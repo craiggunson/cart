@@ -4,6 +4,22 @@ version: 2.1
 orbs: 
   gcp-cli: circleci/gcp-cli@2.4.1
 
+commands:
+  thisone:
+    steps:
+      - run:
+          name: this
+          command: |
+            echo this
+
+  thatone:
+    steps:
+      - run:
+          name: thas
+          command: |
+            echo that
+      - this
+
 jobs:
   avocado:
 
