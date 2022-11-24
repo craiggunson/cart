@@ -18,7 +18,7 @@ commands:
           name: thas
           command: |
             echo that
-      - this
+      - thisone
 
 jobs:
   avocado:
