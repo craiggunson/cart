@@ -33,7 +33,7 @@ jobs:
       - checkout
       #- gcp-cli/install   #already in machine image
       - gcp-cli/initialize:
-          gcloud-service-key: GCLOUD_SERVICE_KEY
+          gcloud-service-key: GCLOUD_CUSTOM
           google-compute-region: AUSTRALIA_REGION
           google-project-id: GOOGLE_PROJECT_ID
 
