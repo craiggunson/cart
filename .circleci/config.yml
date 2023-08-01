@@ -2,7 +2,7 @@
 version: 2.1
 
 orbs: 
-  gcp-cli: circleci/gcp-cli@2.4.1
+  gcp-cli: circleci/gcp-cli@3.1.1
 
 commands:
   thisone:
@@ -32,10 +32,10 @@ jobs:
       - thatone
       - checkout
       #- gcp-cli/install   #already in machine image
-      - gcp-cli/initialize:
-          gcloud-service-key: GCLOUD_CUSTOM
-          google-compute-region: AUSTRALIA_REGION
-          google-project-id: GOOGLE_PROJECT_ID
+      - gcp-cli/setup:
+          gcloud_service_key: GCLOUD_CUSTOM
+          google_compute_region: AUSTRALIA_REGION
+          google_project_id: GOOGLE_PROJECT_ID
 
       - run:
           name: gcloud
