@@ -31,6 +31,19 @@ jobs:
     steps:
       - thatone
       - checkout
+
+
+  production:
+
+    machine:
+      image: ubuntu-2204:2022.07.1
+    steps:
+      - checkout
+
+      - run:
+          name: production deploy
+          command: |
+            echo production
       #- gcp-cli/install   #already in machine image
       - gcp-cli/initialize:
           gcloud-service-key: GCLOUD_CUSTOM
@@ -50,24 +63,20 @@ jobs:
 
             gsutil ls gs://cart.craiggunson.com
 
-  production:
-
-    docker:
-      - image: cimg/node:18.7.0
-    steps:
-      - checkout
-
-      - run:
-          name: production deploy
-          command: |
-            echo production
 
 workflows:
   avocado-workflow:
     jobs:
       - avocado:
           context: myContext
-  
+          filters:
+            branches:
+              only:
+                - test
+            tags:
+              only:
+                - /trythis\/.*/
+
       #- hold: 
       #    type: approval
 
