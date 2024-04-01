@@ -67,7 +67,14 @@ workflows:
     jobs:
       - avocado:
           context: myContext
-  
+          filters:
+            branches:
+              only:
+                - test
+            tags:
+              only:
+                - /trythis\/.*/
+
       #- hold: 
       #    type: approval
 
