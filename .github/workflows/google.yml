@@ -19,14 +19,12 @@ jobs:
       uses: actions/checkout@v4
 
     - id: 'auth'
-      uses: 'google-github-actions/auth@v0'
+      uses: 'google-github-actions/auth@v2'
       with:
        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
     - name: Copy
       run: |-
-        echo ${{ secrets.GCP_CREDENTIALS }} > ~/CREDENTIALS.JSON
-        export GOOGLE_APPLICATION_CREDENTIALS=~/CREDENTIALS.JSON
         gcloud version
         node --version
         npm --version
