@@ -25,7 +25,8 @@ jobs:
 
     - name: Copy
       run: |-
-        export GOOGLE_APPLICATION_CREDENTIALS=${{ secrets.GCP_CREDENTIALS }}
+        echo ${{ secrets.GCP_CREDENTIALS }} > ~/CREDENTIALS.JSON
+        export GOOGLE_APPLICATION_CREDENTIALS=~/CREDENTIALS.JSON
         gcloud version
         node --version
         npm --version
