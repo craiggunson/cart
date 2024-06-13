@@ -25,6 +25,7 @@ jobs:
 
     - name: Copy
       run: |-
+        export GOOGLE_APPLICATION_CREDENTIALS=${{ secrets.GCP_CREDENTIALS }}
         gcloud version
         node --version
         npm --version
