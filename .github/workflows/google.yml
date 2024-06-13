@@ -1,0 +1,30 @@
+
+name: Build and Deploy to Google
+
+on:
+  push:
+    branches: [ "actions" ]
+
+env:
+  PROJECT_ID: ${{ secrets.THIS_PROJECT }}
+
+jobs:
+  setup-build-publish-deploy:
+    name: Copy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v0'
+      with:
+       credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+    - name: Copy
+      run: |-
+        gcloud version
+        node --version
+        npm --version
