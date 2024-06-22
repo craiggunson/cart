@@ -23,4 +23,4 @@ jobs:
           
     - name: Copy to shopcart bucket.
       run: |
-        aws s3 sync ./ s3://shopcart.craiggunson.com --cache-control "max-age=60" --delete
+        aws s3 sync ./ s3://shopcart.craiggunson.com --cache-control "max-age=60" --delete --exclude '.git*' --exclude '.github*'
