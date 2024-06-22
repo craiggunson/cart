@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy Homepage
+    name: Deploy Shopcart
     runs-on: ubuntu-latest
 
     steps:
@@ -23,4 +23,4 @@ jobs:
           
     - name: Copy to shopcart bucket.
       run: |
-        aws s3 sync ./ s3://shopcart.craiggunson.com --acl public-read --cache-control "max-age=60" --delete
+        aws s3 sync ./ s3://shopcart.craiggunson.com --cache-control "max-age=60" --delete
