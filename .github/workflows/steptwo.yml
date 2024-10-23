@@ -2,9 +2,12 @@ name: steptwo
 
 on:
   workflow_run:
-    workflows: ["stepone"]
+    workflows: 
+      - stepone
     types:
       - completed
+    branches: 
+      - prompting
 
 jobs:
   approval:
