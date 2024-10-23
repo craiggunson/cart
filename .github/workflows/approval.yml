@@ -1,0 +1,24 @@
+name: stepone
+
+on:
+  push:
+    branches:
+      - prompting
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build something
+        run: echo "build something"
+
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    # has required reviewers in settings/environments
+    environment: production
+    steps:
+
+      - name: should prompt
+        run: echo "deploy something"
