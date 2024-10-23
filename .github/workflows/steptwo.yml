@@ -1,0 +1,22 @@
+name: steptwo
+
+on:
+  workflow_run:
+    workflows: ["stepone"]
+    types:
+      - completed
+
+jobs:
+  approval:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Await approval
+        run: echo "Please manually trigger this workflow for deployment."
+        if: github.event.workflow_run.conclusion == 'success'
+
+  deploy:
+    needs: approval
+    runs-on: ubuntu-latest
+    steps:
+      - name: do something serious
+        run: echo something serious

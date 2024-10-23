@@ -1,0 +1,14 @@
+name: stepone
+
+on:
+  push:
+    branches:
+      - prompting
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Mark for deployment
+        run: echo "Ready for deployment"
