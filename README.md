@@ -1,7 +1,7 @@
 # cart
-An experiment in shopping cart and Google Analytics 4 (GA4).  Leveraging build in tags for product and retail reporting. 
+https://craiggunson.github.io/cart/
 
-[![static-website](https://github.com/craiggunson/cart/actions/workflows/aws.yml/badge.svg)](https://github.com/craiggunson/cart/actions/workflows/aws.yml)
+An experiment in shopping cart and Google Analytics 4 (GA4).  Leveraging built in tags for product and sales conversion reporting. 
 
 
 ![sample](./sample.png)
