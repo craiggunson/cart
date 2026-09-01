@@ -84,7 +84,7 @@ function redraw(cart) {
   sumcart=cart['items']
   var arrayLength = sumcart.length;
   for (var i = 0; i < arrayLength; i++) {  //add up the total cart value
-    cart.value = cart.value + cart.items[i].price;
+    cart.value = cart.value + cart.items[i].price * cart.items[i].quantity;
     cart.value = Math.round(cart.value *100 ) / 100;
     
   }
