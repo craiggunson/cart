@@ -83,8 +83,9 @@ document.getElementById("demo").innerHTML = JSON.stringify(cart,null,1).replace(
 function redraw(cart) {
   sumcart=cart['items']
   var arrayLength = sumcart.length;
+  cart.value = 0; // recompute from scratch so repeated redraws don't double-count
   for (var i = 0; i < arrayLength; i++) {  //add up the total cart value
-    cart.value = cart.value + cart.items[i].price;
+    cart.value = cart.value + cart.items[i].price * cart.items[i].quantity;
     cart.value = Math.round(cart.value *100 ) / 100;
     
   }
